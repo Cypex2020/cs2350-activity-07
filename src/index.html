@@ -12,10 +12,53 @@
   -->
 </head>
 
-<body>
+<body onload="draw();">
   <!-- Your HTML goes here -->
-  <h1>Welcome to CS 2350!</h1>
-  <p>Testing</p>
+
+
+
+  <canvas id="canvas" width="1000" height="1000">
+    
+  </canvas>
+
+ 
+
+<script>
+
+function draw() {
+
+      const canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        let ctx = canvas.getContext('2d');
+
+
+        for(let i = 0; i < 50000; i+= 25){
+          
+          ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+
+          ctx.fillRect(950-i, 30+i, 50, 50);
+
+          ctx.fillRect(i, 30+i, 50,50);
+
+          ctx.fillRect(i+50, 500, i+50, 9);
+        }
+
+        for(let i = 0; i < 50000; i+= 25){
+          
+          ctx.fillStyle = 'rgba(0, 34, 200, 0.5)';
+
+          
+          if(i < 200){
+            ctx.fillRect(900-i, 50,50);
+          }
+          ctx.fillRect(500-i, i, 25, 10);
+
+          ctx.fillRect(250-i, i-20, 50, 68);
+        }
+      }
+    }
+
+</script>
 
 </body>
 </html>
